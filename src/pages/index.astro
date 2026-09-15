@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import { profile, about, experience, extracurriculars, projects } from '../data/profile';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' }).toLowerCase();
+---
+
+<BaseLayout title={`${profile.name} — engineer`} description={profile.intro}>
+  <div class="avatar">
+    <img src={profile.avatar} alt={profile.avatarAlt} />
+  </div>
+
+  <h1>{profile.name}</h1>
+
+  <p class="intro" set:html={profile.intro} />
+
+  <div class="accordion">
+    <details class="item" open>
+      <summary><span class="caret">&#8250;</span> about</summary>
+      <div class="body">
+        {about.paragraphs.map((p) => <p set:html={p} />)}
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="caret">&#8250;</span> experience</summary>
+      <div class="body">
+        {
+          experience.map((r) => (
+            <>
+              <div class="role">
+                <div class="company">{r.title} — {r.company}</div>
+                {r.meta && <div class="meta">{r.meta}</div>}
+              </div>
+              {r.blurb && <p>{r.blurb}</p>}
+            </>
+          ))
+        }
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="caret">&#8250;</span> side projects</summary>
+      <div class="body">
+        {
+          projects.map((p) => (
+            <>
+              <div class="role">
+                <div class="company">
+                  {p.href ? <a href={p.href}>{p.name}</a> : p.name}
+                </div>
+                <div class="meta">{p.stack}</div>
+              </div>
+              {p.blurb && <p>{p.blurb}</p>}
+            </>
+          ))
+        }
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="caret">&#8250;</span> extracurriculars</summary>
+      <div class="body">
+        {
+          extracurriculars.map((r) => (
+            <>
+              <div class="role">
+                <div class="company">{r.title} — {r.company}</div>
+                {r.meta && <div class="meta">{r.meta}</div>}
+              </div>
+              {r.blurb && <p>{r.blurb}</p>}
+            </>
+          ))
+        }
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="caret">&#8250;</span> reading &amp; writing</summary>
+      <div class="body">
+        <p>a running list of books and articles that have shaped my perspective or gave me food for thought.</p>
+        {
+          posts.length > 0 && (
+            <ul class="post-list">
+              {posts.map((post) => (
+                <li>
+                  <a href={`/blog/${post.id}/`}>
+                    <span class="post-title">{post.data.title}</span>
+                    <span class="post-date"> · {fmt(post.data.date)}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+        <p><a href="/blog/">all posts &#8594;</a></p>
+      </div>
+    </details>
+  </div>
+
+  <Footer />
+</BaseLayout>
