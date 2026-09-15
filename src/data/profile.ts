@@ -15,7 +15,7 @@ export interface Project {
 export const profile = {
   name: 'Elizabeth Cay',
   intro:
-    "is an interdisciplinary engineer based out of toronto, ca and a third-year engineering physics student at mcmaster university. a fan of creative writing, building altruistically, and iced london fogs.",
+    "i'm a third-year engineering physics student at mcmaster university. a fan of creative writing, building altruistically, and iced london fogs.",
   avatar: '/assets/flower_icon.jpeg',
   avatarAlt: 'elizabeth cay',
   links: {
@@ -28,7 +28,7 @@ export const profile = {
 export const about = {
   paragraphs: [
     `i'm a toronto native, studying <a href="https://www.eng.mcmaster.ca/engphys/" target="_blank" rel="noopener">engineering physics</a> at mcmaster university. alongside classical and modern physics coursework, i've taken technical electives like data structures &amp; algorithms, scientific computing in c++, and numerical methods.`,
-    `i'm most interested in creating efficient and equitable software. right now i'm building at <a href="https://www.linkedin.com/company/nenosapps" target="_blank" rel="noopener">nenos inc.</a>, writing backend features for their social-media. i'm on the hunt for a co-op starting may 2026.`,
+    `i'm most interested in creating efficient and equitable software. right now i'm building at <a href="https://www.linkedin.com/company/nenosapps" target="_blank" rel="noopener">nenos inc.</a>, writing backend features for their social-media & i'm on the hunt for a co-op starting may 2026.`,
     `i spend my down time making dj mixes and sifting through substack articles about the tech landscape.`,
   ],
 };
@@ -56,7 +56,7 @@ export const extracurriculars: Role[] = [
     title: 'upper year mentor',
     meta: '2025 - present',
     blurb:
-      "reminding first years they're not cooked and it's not all over <3.",
+      "reminding first years they're not cooked and it's not all over!!!",
   },
   {
     company: 'mcmaster design league',
@@ -78,6 +78,6 @@ export const projects: Project[] = [
     name: 'esp32 rhythm game (boppo)',
     stack: 'rust, python, esp32-s3',
     blurb:
-      'a full-stack rhythm game for a screen-free kids’ tablet. a rust / webassembly engine for the note state machine, input timing, hit-judging, scoring, and led rendering inside a 32 kb stack budget.',
+      'a full-stack rhythm game for a screen-free kids’ tablet. a rust/webassembly engine for the note state machine, input timing, hit-judging, scoring, and led rendering inside a 32 kb stack budget.',
   },
 ];
