@@ -19,8 +19,8 @@ export const profile = {
   avatar: '/assets/flower_icon.jpeg',
   avatarAlt: 'elizabeth cay',
   links: {
-    github: 'https://github.com/',
-    linkedin: 'https://www.linkedin.com/',
+    github: 'https://github.com/elizabethcay',
+    linkedin: 'https://www.linkedin.com/in/elizabethcay/',
     email: 'caye@mcmaster.ca',
   },
 };
