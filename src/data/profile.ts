@@ -27,9 +27,9 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    `i'm a toronto native, studying <a href="https://www.eng.mcmaster.ca/engphys/" target="_blank" rel="noopener">engineering physics</a> at mcmaster university. alongside classical and modern physics coursework, i've taken technical electives i loved — data structures &amp; algorithms, scientific computing in c++, and numerical methods.`,
+    `i'm a toronto native, studying <a href="https://www.eng.mcmaster.ca/engphys/" target="_blank" rel="noopener">engineering physics</a> at mcmaster university. alongside classical and modern physics coursework, i've taken technical electives like data structures &amp; algorithms, scientific computing in c++, and numerical methods.`,
     `i'm most interested in creating efficient and equitable software. right now i'm building at <a href="https://www.linkedin.com/company/nenosapps" target="_blank" rel="noopener">nenos inc.</a>, writing backend features for their social-media. i'm on the hunt for a co-op starting may 2026.`,
-    `outside of that i spend my down time making dj mixes and sifting through substack articles about the tech landscape.`,
+    `i spend my down time making dj mixes and sifting through substack articles about the tech landscape.`,
   ],
 };
 
@@ -63,7 +63,7 @@ export const extracurriculars: Role[] = [
     title: 'software developer',
     meta: '2025 - 2026',
     blurb:
-      'researching future python integrations and libraries on a 5-person team to support internal club tooling.',
+      'pitched future python integrations and libraries on a 5-person team to support internal club tooling.',
   },
 ];
 
