@@ -28,7 +28,7 @@ export const profile = {
 export const about = {
   paragraphs: [
     `i'm a toronto native, studying <a href="https://www.eng.mcmaster.ca/engphys/" target="_blank" rel="noopener">engineering physics</a> at mcmaster university. alongside classical and modern physics coursework, i've taken technical electives i loved — data structures &amp; algorithms, scientific computing in c++, and numerical methods.`,
-    `i'm most interested in creating efficient and equitable software. right now i'm building at <a href="#" target="_blank" rel="noopener">nenos inc.</a>, writing production backend features for a social-media app in node.js / typescript, and i'm on the hunt for a co-op starting may 2026.`,
+    `i'm most interested in creating efficient and equitable software. right now i'm building at <a href="https://www.linkedin.com/company/nenosapps" target="_blank" rel="noopener">nenos inc.</a>, writing production backend features for a social-media app in node.js / typescript, and i'm on the hunt for a co-op starting may 2026.`,
     `outside of that i spend most days making dj mixes and sifting through substack articles about the tech landscape.`,
   ],
 };
