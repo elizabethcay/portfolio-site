@@ -85,10 +85,13 @@ const fmt = (d: Date) =>
     <details class="item">
       <summary><span class="caret">&#8250;</span> reading &amp; writing</summary>
       <div class="body">
+        <h3 class="section-head">reading</h3>
         <p>a running list of books and articles that have shaped my perspective or gave me food for thought.</p>
+
+        <h3 class="section-head">writing</h3>
         {
           posts.length > 0 && (
-            <ul class="post-list">
+            <ul class="post-list post-list--plain">
               {posts.map((post) => (
                 <li>
                   <a href={`/blog/${post.id}/`}>
@@ -100,7 +103,7 @@ const fmt = (d: Date) =>
             </ul>
           )
         }
-        <p><a href="/blog/">all posts &#8594;</a></p>
+        <p class="all-posts"><a href="/blog/">all posts &#8594;</a></p>
       </div>
     </details>
   </div>
