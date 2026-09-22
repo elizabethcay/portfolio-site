@@ -71,7 +71,7 @@ export const writing: Card[] = [
     href: '/blog/shazam-notes/',
   },
   {
-    title: 'mimetic desire in the internship rat race',
+    title: 'mimetic desire, larping, and the rat race',
     sub: 'reflections from the recruiting cycle',
     date: 'sept 2026',
     href: '/blog/mimetic-desire/',

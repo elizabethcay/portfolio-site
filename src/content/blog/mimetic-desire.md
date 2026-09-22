@@ -1,5 +1,5 @@
 ---
-title: mimetic desire in the internship rat race
+title: mimetic desire, larping, and the rat race
 description: reflections from the recruiting cycle
 date: 2026-09-01
 draft: false
