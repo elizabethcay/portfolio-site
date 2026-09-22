@@ -23,21 +23,21 @@ export const work: Card[] = [
     sub: 'nenos inc.',
     date: 'july 2026 - present',
     logo: '/assets/nenos.png',
-    href: '#',
+    href: 'https://nenos.one/',
   },
   {
     title: 'student software engineer',
     sub: 'develop for good',
     date: 'oct 2025 - feb 2026',
     logo: '/assets/develop_for_good.jpeg',
-    href: '#',
+    href: 'https://www.developforgood.org/',
   },
   {
     title: 'research assistant',
     sub: 'university of toronto',
     date: 'june 2024 - aug 2024',
     logo: '/assets/uoft.webp',
-    href: '#',
+    href: 'https://www.utoronto.ca/',
   },
 ];
 
@@ -46,7 +46,7 @@ export const school: Card[] = [
     title: 'mcmaster university',
     sub: 'engineering physics',
     logo: '/assets/mcmaster.svg',
-    href: '#',
+    href: 'https://www.eng.mcmaster.ca/engphys/',
   },
 ];
 
