@@ -1,6 +1,6 @@
 ---
-title: what i learned building a shazam clone
-description: fourier transforms, combinatorial hashing, and a 10,000× speedup.
+title: how the shazam algorithm works & how i cloned it
+description: short-time fourier transforms and extremely efficient hashing
 date: 2026-08-02
 draft: false
 ---

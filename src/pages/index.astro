@@ -1,112 +1,94 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Footer from '../components/Footer.astro';
-import { getCollection } from 'astro:content';
-import { profile, about, experience, extracurriculars, projects } from '../data/profile';
+import { profile, work, school, projects, reading, writing, type Card } from '../data/profile';
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
+const { github, linkedin, email } = profile.links;
 
-const fmt = (d: Date) =>
-  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' }).toLowerCase();
+const sections: { heading: string; items: Card[] }[] = [
+  { heading: 'work', items: work },
+  { heading: 'school', items: school },
+  { heading: 'projects', items: projects },
+  { heading: 'reading', items: reading },
+  { heading: 'writing', items: writing },
+];
 ---
 
-<BaseLayout title={`${profile.name} — engineer`} description={profile.intro}>
-  <div class="avatar">
-    <img src={profile.avatar} alt={profile.avatarAlt} />
-  </div>
+<BaseLayout title={profile.name}>
+  <div class="page">
+    <aside class="intro">
+      <h1 aria-label="hey, i'm elizabeth.">
+        <span aria-hidden="true"><span id="greet">{profile.greetings[0]}</span><span class="caret"></span>, i'm elizabeth.</span>
+      </h1>
+      <p class="bio">{profile.bio}</p>
 
-  <h1>{profile.name}</h1>
+      <p class="find">find me here:</p>
+      <ul class="links">
+        <li><a href={github} target="_blank" rel="noopener">github</a></li>
+        <li><a href={linkedin} target="_blank" rel="noopener">linkedin</a></li>
+        <li><a href={`mailto:${email}`}>email</a></li>
+      </ul>
+    </aside>
 
-  <p class="intro" set:html={profile.intro} />
-
-  <div class="accordion">
-    <details class="item" open>
-      <summary><span class="caret">&#8250;</span> about</summary>
-      <div class="body">
-        {about.paragraphs.map((p) => <p set:html={p} />)}
-      </div>
-    </details>
-
-    <details class="item">
-      <summary><span class="caret">&#8250;</span> experience</summary>
-      <div class="body">
-        {
-          experience.map((r) => (
-            <>
-              <div class="role">
-                <div class="company">{r.title} — {r.company}</div>
-                {r.meta && <div class="meta">{r.meta}</div>}
-              </div>
-              {r.blurb && <p>{r.blurb}</p>}
-            </>
-          ))
-        }
-      </div>
-    </details>
-
-    <details class="item">
-      <summary><span class="caret">&#8250;</span> side projects</summary>
-      <div class="body">
-        {
-          projects.map((p) => (
-            <>
-              <div class="role">
-                <div class="company">
-                  {p.href ? <a href={p.href}>{p.name}</a> : p.name}
-                </div>
-                <div class="meta">{p.stack}</div>
-              </div>
-              {p.blurb && <p>{p.blurb}</p>}
-            </>
-          ))
-        }
-      </div>
-    </details>
-
-    <details class="item">
-      <summary><span class="caret">&#8250;</span> extracurriculars</summary>
-      <div class="body">
-        {
-          extracurriculars.map((r) => (
-            <>
-              <div class="role">
-                <div class="company">{r.title} — {r.company}</div>
-                {r.meta && <div class="meta">{r.meta}</div>}
-              </div>
-              {r.blurb && <p>{r.blurb}</p>}
-            </>
-          ))
-        }
-      </div>
-    </details>
-
-    <details class="item">
-      <summary><span class="caret">&#8250;</span> reading &amp; writing</summary>
-      <div class="body">
-        <h3 class="section-head">reading</h3>
-        <p>a running list of books and articles that have shaped my perspective or gave me food for thought.</p>
-
-        <h3 class="section-head">writing</h3>
-        {
-          posts.length > 0 && (
-            <ul class="post-list post-list--plain">
-              {posts.map((post) => (
-                <li>
-                  <a href={`/blog/${post.id}/`}>
-                    <span class="post-title">{post.data.title}</span>
-                    <span class="post-date"> · {fmt(post.data.date)}</span>
-                  </a>
-                </li>
+    <main>
+      {
+        sections.map((section) => (
+          <section>
+            <h2>{section.heading}</h2>
+            <div class="stack">
+              {section.items.map((item) => (
+                <a class="card" href={item.href ?? '#'}>
+                  {item.logo && (
+                    <div class="logo"><img src={item.logo} alt={`${item.sub ?? item.title} logo`} /></div>
+                  )}
+                  <div class="text">
+                    <div class="title">{item.title}</div>
+                    {item.sub && <div class="sub">{item.sub}</div>}
+                  </div>
+                  {item.date && <div class="date">{item.date}</div>}
+                </a>
               ))}
-            </ul>
-          )
-        }
-        <p class="all-posts"><a href="/blog/">all posts &#8594;</a></p>
-      </div>
-    </details>
+            </div>
+          </section>
+        ))
+      }
+    </main>
   </div>
 
-  <Footer />
+  <script is:inline data-greetings={JSON.stringify(profile.greetings)}>
+    (() => {
+      const el = document.getElementById('greet');
+      const caret = document.querySelector('.caret');
+      if (!el || !caret) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const words = JSON.parse(document.currentScript.dataset.greetings);
+      const TYPE = 110, DELETE = 60, HOLD = 1800, GAP = 350;
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+      let i = 0;
+
+      async function loop() {
+        while (true) {
+          await sleep(HOLD);
+          caret.classList.add('typing');
+          let chars = Array.from(words[i]);
+          while (chars.length) {
+            chars.pop();
+            el.textContent = chars.join('');
+            await sleep(DELETE);
+          }
+          caret.classList.remove('typing');
+          await sleep(GAP);
+          caret.classList.add('typing');
+          i = (i + 1) % words.length;
+          const next = Array.from(words[i]);
+          for (let n = 1; n <= next.length; n++) {
+            el.textContent = next.slice(0, n).join('');
+            await sleep(/[一-鿿]/.test(words[i]) ? TYPE * 2 : TYPE);
+          }
+          caret.classList.remove('typing');
+        }
+      }
+      loop();
+    })();
+  </script>
 </BaseLayout>

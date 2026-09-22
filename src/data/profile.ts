@@ -1,23 +1,15 @@
-export interface Role {
-  company: string;
+export interface Card {
   title: string;
-  meta?: string;
-  blurb?: string;
-}
-
-export interface Project {
-  name: string;
-  stack: string;
-  blurb?: string;
+  sub?: string;
+  date?: string;
+  logo?: string;
   href?: string;
 }
 
 export const profile = {
-  name: 'Elizabeth Cay',
-  intro:
-    "A third-year engineering physics student at mcmaster university + A fan of creative writing, building altruistically, and iced london fogs.",
-  avatar: '/assets/flower_icon.jpeg',
-  avatarAlt: 'Elizabeth Cay Icon',
+  name: 'elizabeth c.',
+  greetings: ['hey', 'xin chào', '你好'],
+  bio: "i study engineering physics & math at mcmaster university. currently chasing engineering that's ethical, efficient, and altruistic.",
   links: {
     github: 'https://github.com/elizabethcay',
     linkedin: 'https://www.linkedin.com/in/elizabethcay/',
@@ -25,59 +17,78 @@ export const profile = {
   },
 };
 
-export const about = {
-  paragraphs: [
-    `I'm a toronto native, studying <a href="https://www.eng.mcmaster.ca/engphys/" target="_blank" rel="noopener">engineering physics</a> at Mcmaster University. Alongside classical and modern physics coursework, I've taken technical electives like data structures &amp; algorithms, scientific computing in c++, and numerical methods.`,
-    `I'm most interested in creating efficient and equitable software. Currently building at <a href="https://www.linkedin.com/company/nenosapps" target="_blank" rel="noopener">nenos inc.</a>, writing backend features for their iOS app & I'm on the hunt for a co-op/internship starting May 2026.`,
-    `I spend my down time making dj mixes and sifting through Substack articles about the tech landscape.`,
-  ],
-};
-
-export const experience: Role[] = [
+export const work: Card[] = [
   {
-    company: 'nenos inc.',
-    title: 'Open Source Software Engineer',
-    meta: '2026 - Present · Based in Tampa, FL',
-    blurb:
-      'Backend app development.',
+    title: 'open source software engineer',
+    sub: 'nenos inc.',
+    date: 'july 2026 - present',
+    logo: '/assets/nenos.png',
+    href: '#',
   },
   {
-    company: 'Develop for Good',
-    title: 'Software Engineer Intern',
-    meta: '2025 - 2026 · Based in San Francisco, CA',
-    blurb:
-      'CMS migration, databases',
-  },
-];
-
-export const extracurriculars: Role[] = [
-  {
-    company: 'McMaster Engineering Society',
-    title: 'Upper Year Mentor',
-    meta: '2025 - Present',
-    blurb:
-      "Reminding first years they're not cooked and it's not all over!",
+    title: 'student software engineer',
+    sub: 'develop for good',
+    date: 'oct 2025 - feb 2026',
+    logo: '/assets/develop_for_good.jpeg',
+    href: '#',
   },
   {
-    company: 'McMaster Design League',
-    title: 'Software Developer',
-    meta: '2025 - 2026',
-    blurb:
-      'Pitched future Python integrations and libraries on a 5-person team to support internal club tooling.',
+    title: 'research assistant',
+    sub: 'university of toronto',
+    date: 'june 2024 - aug 2024',
+    logo: '/assets/uoft.webp',
+    href: '#',
   },
 ];
 
-export const projects: Project[] = [
+export const school: Card[] = [
   {
-    name: 'Song Recognition Algorithm',
-    stack: 'Python, NumPy, librosa',
-    blurb:
-      'A Shazam-clone song recognizer using short-time fourier transform spectrogram analysis with combinatorial hashing scheme and time-offset histogram matching hit 90% recognition above +7 db snr.',
+    title: 'mcmaster university',
+    sub: 'engineering physics + minoring in math',
+    logo: '/assets/mcmaster.svg',
+    href: '#',
+  },
+];
+
+export const projects: Card[] = [
+  {
+    title: 'music recognition algorithm',
+    sub: 'real-time song recognition and noise isolation',
+    href: '#',
   },
   {
-    name: 'ESP32-S3 rhythm game (Boppo)',
-    stack: 'Rust, Python, ESP32-S3 Microcontroller',
-    blurb:
-      'A full-stack rhythm game for the Boppo, a screen-free kids’ tablet. Rust/WebAssembly engine for the note state machine, input timing, hit-judging, scoring, and led rendering inside a 32 kb stack budget.',
+    title: 'esp32 rhythm game',
+    sub: "japanese rhythm game inspired game for the boppo (children's screenless tablet)",
+    href: '#',
+  },
+];
+
+export const reading: Card[] = [
+  {
+    title: 'algorithms to live by',
+    sub: 'brian christian and tom griffiths',
+    date: 'reading now',
+    href: '#',
+  },
+  {
+    title: 'the soul of a new machine',
+    sub: 'tracy kidder',
+    date: 'finished',
+    href: '#',
+  },
+];
+
+export const writing: Card[] = [
+  {
+    title: 'how the shazam algorithm works & how i cloned it',
+    sub: 'short-time fourier transforms and extremely efficient hashing',
+    date: 'aug 2026',
+    href: '/blog/shazam-notes/',
+  },
+  {
+    title: 'mimetic desire in the internship rat race',
+    sub: 'reflections from the recruiting cycle',
+    date: 'sept 2026',
+    href: '/blog/mimetic-desire/',
   },
 ];
