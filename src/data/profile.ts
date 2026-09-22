@@ -66,7 +66,7 @@ export const projects: Card[] = [
 export const writing: Card[] = [
   {
     title: 'how the shazam algorithm works & how i cloned it',
-    sub: 'short-time fourier transforms and extremely efficient hashing',
+    sub: 'short-time fourier transforms and quick hashing',
     date: 'aug 2026',
     href: '/blog/shazam-notes/',
   },

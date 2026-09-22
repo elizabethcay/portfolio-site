@@ -1,6 +1,6 @@
 ---
 title: how the shazam algorithm works & how i cloned it
-description: short-time fourier transforms and extremely efficient hashing
+description: short-time fourier transforms and quick hashing
 date: 2026-08-02
 draft: false
 ---
