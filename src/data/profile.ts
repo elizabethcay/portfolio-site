@@ -63,21 +63,6 @@ export const projects: Card[] = [
   },
 ];
 
-export const reading: Card[] = [
-  {
-    title: 'algorithms to live by',
-    sub: 'brian christian and tom griffiths',
-    date: 'reading now',
-    href: '#',
-  },
-  {
-    title: 'the soul of a new machine',
-    sub: 'tracy kidder',
-    date: 'finished',
-    href: '#',
-  },
-];
-
 export const writing: Card[] = [
   {
     title: 'how the shazam algorithm works & how i cloned it',

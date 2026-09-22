@@ -1,8 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { profile, work, school, projects, reading, writing, type Card } from '../data/profile';
+import { getCollection } from 'astro:content';
+import { profile, work, school, projects, writing, type Card } from '../data/profile';
 
 const { github, linkedin, email } = profile.links;
+
+const reading: Card[] = (await getCollection('reading', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map((book) => ({
+    title: book.data.title,
+    sub: book.data.author,
+    date: book.data.status,
+    href: `/reading/${book.id}/`,
+  }));
 
 const sections: { heading: string; items: Card[] }[] = [
   { heading: 'work', items: work },
