@@ -59,7 +59,7 @@ export const projects: Card[] = [
   {
     title: 'esp32 rhythm game',
     sub: "japanese rhythm game inspired game for the boppo (children's screenless tablet)",
-    href: '#',
+    href: 'https://github.com/elizabethcay/boppo-rhythm-game',
   },
 ];
 

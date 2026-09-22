@@ -36,7 +36,11 @@ const sections: { heading: string; items: Card[] }[] = [
             <h2>{section.heading}</h2>
             <div class="stack">
               {section.items.map((item) => (
-                <a class="card" href={item.href ?? '#'}>
+                <a
+                  class="card"
+                  href={item.href ?? '#'}
+                  {...(item.href?.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {})}
+                >
                   {item.logo && (
                     <div class="logo"><img src={item.logo} alt={`${item.sub ?? item.title} logo`} /></div>
                   )}
