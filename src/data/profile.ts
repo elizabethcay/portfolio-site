@@ -9,7 +9,7 @@ export interface Card {
 export const profile = {
   name: 'elizabeth c.',
   greetings: ['hey', 'xin chào', '你好'],
-  bio: "i study engineering physics & math at mcmaster university. currently chasing engineering that's ethical, efficient, and altruistic.",
+  bio: "i study engineering physics at mcmaster university. currently chasing engineering that's ethical, efficient, and altruistic.",
   links: {
     github: 'https://github.com/elizabethcay',
     linkedin: 'https://www.linkedin.com/in/elizabethcay/',
@@ -44,7 +44,7 @@ export const work: Card[] = [
 export const school: Card[] = [
   {
     title: 'mcmaster university',
-    sub: 'engineering physics + minoring in math',
+    sub: 'engineering physics',
     logo: '/assets/mcmaster.svg',
     href: '#',
   },
