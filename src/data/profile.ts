@@ -9,7 +9,7 @@ export interface Card {
 export const profile = {
   name: 'elizabeth c.',
   greetings: ['hey', 'xin chào', '你好'],
-  bio: "i study engineering physics at mcmaster university. currently chasing engineering that's ethical, efficient, and altruistic.",
+  bio: "i study engineering physics at mcmaster university. currently chasing engineering that's ethical and efficient.",
   links: {
     github: 'https://github.com/elizabethcay',
     linkedin: 'https://www.linkedin.com/in/elizabethcay/',
