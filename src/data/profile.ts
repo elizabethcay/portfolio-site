@@ -26,7 +26,7 @@ export const work: Card[] = [
     href: '#',
   },
   {
-    title: 'open source software engineer',
+    title: 'software engineer',
     sub: 'nenos inc.',
     date: 'july 2026 - present',
     logo: '/assets/nenos.png',
