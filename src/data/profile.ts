@@ -9,7 +9,7 @@ export interface Card {
 export const profile = {
   name: 'elizabeth c.',
   greetings: ['hey', 'xin chào', '你好'],
-  bio: "i study engineering physics at mcmaster university. currently chasing engineering that's ethical and efficient.",
+  bio: "i study engineering physics at mcmaster university. currently chasing builds that are efficient and intentional.",
   links: {
     github: 'https://github.com/elizabethcay',
     linkedin: 'https://www.linkedin.com/in/elizabethcay/',
@@ -18,6 +18,13 @@ export const profile = {
 };
 
 export const work: Card[] = [
+  {
+    title: 'software developer',
+    sub: 'google developer groups mcmaster',
+    date: 'incoming',
+    logo: '/assets/gdg.jpg',
+    href: '#',
+  },
   {
     title: 'open source software engineer',
     sub: 'nenos inc.',
@@ -65,8 +72,8 @@ export const projects: Card[] = [
 
 export const writing: Card[] = [
   {
-    title: 'how the shazam algorithm works & how i cloned it',
-    sub: 'short-time fourier transforms and quick hashing',
+    title: 'how the shazam algorithm works + how i cloned it',
+    sub: 'short-time fourier transforms and insanely quick hash lookups',
     date: 'aug 2026',
     href: '/blog/shazam-notes/',
   },
